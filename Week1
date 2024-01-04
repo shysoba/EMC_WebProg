@@ -1,1 +1,39 @@
-awowowowoo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Week</title>
+</head>
+<body>
+    <p>Guest@MACLAB503-27s-iMac EMC_WebProg % git config --global user.email "sosobangee@gmail.com"</p>
+    <p>Guest@MACLAB503-27s-iMac EMC_WebProg % git config --global user.name "Soba"</p>
+    <p>Last login: Thu Jan  4 11:02:30 on console<br>
+        Guest@MACLAB503-27s-iMac ~ % ssh-keygen -t ed25519 -C "sosobangee@gmail.com"<br>
+        Generating public/private ed25519 key pair.<br>
+        Enter file in which to save the key (/Users/Guest/.ssh/id_ed25519): <br>
+        Created directory '/Users/Guest/.ssh'.<br>
+        Enter passphrase (empty for no passphrase): <br>
+        Enter same passphrase again: <br>
+        Your identification has been saved in /Users/Guest/.ssh/id_ed25519<br>
+        Your public key has been saved in /Users/Guest/.ssh/id_ed25519.pub<br>
+        The key fingerprint is:<br>
+        SHA256:X25Ozooti14Z2nJ+rqAIZoh9wF3RLd0AXrM09cDiMIE sosobangee@gmail.com<br>
+        The key's randomart image is:<br>
+        +--[ED25519 256]--+<br>
+        |      .oo=*=o    |<br>
+        |      Eo=o++oo   |<br>
+        |      . .=..  .  |<br>
+        | . . .    .      |<br>
+        |  o .   S   .    |<br>
+        |o. .   o + o     |<br>
+        |+o. . + = . +    |<br>
+        |o. o . B.o.*     |<br>
+        |  . ..o =*+.+    |<br>
+        +----[SHA256]-----+<br>
+        Guest@MACLAB503-27s-iMac ~ % cat /Users/Guest/.ssh/id_ed25519.pub<br>
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGUIQAvfFPbybl3jmIyfN64b2xrUh5alUC4jFhwMkyXn sosobangee@gmail.com<br>
+        Guest@MACLAB503-27s-iMac ~ % <br></p>
+</body>
+</html>
