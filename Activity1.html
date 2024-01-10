@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images\snoopy.png">    
+    <title>Activity 1</title>
+
+    <style>
+        body {
+            margin: 40px;
+            color: white;
+            background-image: linear-gradient(to bottom right, #d8ebbc, #fdfefb);
+            color: #4c6a20;
+            font-family: 'Times New Roman', sans-serif;
+            font-weight: normal;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        h2, h3, h4, h5 {
+            font-weight: lighter;
+        }
+
+        table, th, td {
+            border: 1px solid #2a4205;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        table {
+            width: 50vw;
+            height: 50vh;
+            display: none;
+        }
+
+        .red {
+            color: red;
+        }
+
+        a {
+            color:#2a4205;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- h1 to h5 and red p -->
+        <br><br><br><br><br><br>
+        <h1>"erosion," jamie oliveira</h1>
+        <h5>i am afraid</h5>
+        <h2>that if</h2>
+        <h3>i open myself</h3>
+        <h4>i will not stop pouring</h4>
+        <p id class="red">(why do i fear becoming a river. what mountain gave me such shame.)</p>
+        <br><br><br>
+
+        <!-- toggle table and link -->
+        <br><br><br><br><br><br>
+        <button onclick="toggleTable()">Open Me</button>
+
+        <!-- table and link -->
+        <center>
+            <br><p id="link" style="display: none;"><b>soft skills i developed from my time at <a href="https://www.ciit.edu.ph">ciit</b></a></p>
+        </center>
+
+        <table id="skills">
+            <tr>
+                <td>Adaptability</td>
+                <td>★★★☆☆</td>
+            </tr>
+            <tr>
+                <td>Detail-Oriented</td>
+                <td>★★★★☆</td>
+            </tr>
+            <tr>
+                <td>Communication</td>
+                <td>★★★☆☆</td>
+            </tr>
+            <tr>
+                <td>Problem Solving</td>
+                <td>★★★☆☆</td>
+            </tr>
+            <tr>
+                <td>Creativity</td>
+                <td>★★★★☆</td>
+            </tr>
+            
+        </table>
+        <br>
+
+        <script>
+            function toggleTable() {
+                var table = document.getElementById("skills");
+                var link = document.getElementById("link");
+
+                if (table.style.display === "none") 
+                {
+                    table.style.display = "table";
+                    link.style.display = "block";
+                } 
+                else 
+                {
+                    table.style.display = "none";
+                    link.style.display = "none";
+                }
+            }
+        </script>
+
+    </main>
+</body>
+
+</html>
