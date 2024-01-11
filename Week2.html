@@ -6,9 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="images\snoopy.png"> 
-    <title>Week 2</title>
+    <title>Activity 1</title>
 </head>
 <body>
-    
+    <h1>Christmas Part Christmas Form</h1> <br>
+    <form>
+    Name: <input type="text" placeholder="Enter your name" name="name"> <br>
+    Email: <input type="email" placeholder="Enter your email"> <Br>
+    Age: <input type="number" placeholder="Enter your age"></Br>
+
+    <form action="/action_page.php">
+        <label for="option">What option best describes you:</label>
+        <select name="option" id="option">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="admin">Admin</option>]
+        </select><br>
+
+    Did you enjoy the party?
+        <input type="radio" id="yes" name="enjoy" value="yes" checked />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="enjoy" value="no" />
+        <label for="no">No</label>
+      </div><br>
+
+      What did you like about the program?<br>
+    <input type="checkbox" name="like"> Games <br>
+    <input type="checkbox" name="like"> The Learning Session from the Industry Experts <br>
+    <input type="checkbox" name="like"> Meeting new people <br>
+    <input type="checkbox" name="like"> Event's place <br>
+    <input type="checkbox" name="like"> Raffle! <br>
+    <input type="checkbox" name="like"> Food and drinks <br>
+
+    <p>Any comments or sugggestions <textarea name="comments" id="comments">
+        </textarea></p>
+    <button type="reset">Reset</button>  
+    <button type="submit">Submit</button> 
+</form>
 </body>
 </html>
