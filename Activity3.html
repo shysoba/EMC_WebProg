@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images\snoopy.png">  
+    <title>Activity #3</title>
+    
+    <style>
+        body {
+            background: #fffacd;
+            color: #000000;
+            font-family: 'Times New Roman', Times, serif;        
+            font-style: italic;
+            text-align: center;
+            margin: 50px;
+            padding-top: 2px;
+        }
+        .hidden {
+            display: none;
+        }
+        p {
+            padding-top: 20px;
+        }
+    </style>
+
+    <script>
+        function changeContent() {
+            document.getElementById("changeContent").innerHTML = "although the yearning stays";
+        }
+
+        function changeFontStyle() {
+            document.getElementById("changeFont").style.fontStyle = 'normal';
+            document.getElementById("changeFont").style.color = '#5cab4c';
+        }
+
+        function hideElement() {
+            document.getElementById("elementToHideShow").classList.add("hidden");
+        }
+
+        function showElement() {
+            document.getElementById("elementToHideShow").classList.remove("hidden");
+        }
+
+        function consoleLog() {
+            console.log("hello world");
+        }
+
+        function compute() {
+            let x = 5;
+            y = 3;       
+            document.getElementById("answer").innerHTML = "answer: " + (x ** y);
+        }
+    </script>
+
+</head>
+<body>
+    <h1 id="changeContent">summer went away</h1>
+    <button onclick="changeContent()">change content</button>
+    <br>
+
+    <p id="changeFont" style="font-size: 16px;">i watched u chaangeee</p>
+    <button onclick="changeFontStyle()">change font style</button>
+    <br><br>
+
+    <p id="elementToHideShow">the time will pass anyways</p>
+    <button onclick="hideElement()">hide</button>
+    <button onclick="showElement()">show</button>
+    <br><br>
+    
+    <button onclick="consoleLog()">console</button>
+
+    <script>
+        alert("Welcome to CIIT ^_^");
+    </script>
+
+    <p id="question">if x is 5, and y is 3, what is the 5 raised to power of 3 is:</p>
+    <button onclick="compute()">answer</button>
+    <p id="answer"></p>
+
+    
+</body>
+</html>
