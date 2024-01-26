@@ -152,6 +152,10 @@ body {
     margin-bottom: 12px;
     background-image: url('images/2_8.gif');
     background-size: cover;
+    transition: transform 1s ease;
+}
+.avatar:hover {
+    transform: scale(1.5); 
 }
 .menu2 {    
     padding: 20px;
