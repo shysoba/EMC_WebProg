@@ -1,0 +1,80 @@
+@font-face {
+	font-family: DOS;
+	src: url(assets/Px437_DOS-V_re_ANK24.ttf);
+  }
+
+@font-face {
+	font-family: Fake Receipt;
+	src: url(assets/fake\ receipt.otf);
+	font-weight: 100;
+}
+@font-face {
+	font-family: Gellisto;
+	src: url(assets/Gellisto.ttf);
+}
+@font-face {
+	font-family: Mario;
+	src: url(assets/Mario64.ttf);
+}
+@font-face {
+	font-family: Callheart;
+	src: url(assets/Callheart-BWzRG.ttf);
+}
+@font-face {
+	font-family: Gmarket;
+	src: url(assets/GmarketSansTTFBold.ttf);
+}
+@font-face {
+	font-family: Sprayers;
+	src: url(assets/Sprayerz\ DEMO.ttf);
+}
+@font-face {
+	font-family: Swiss;
+	src: url(assets/SwissGrit.otf);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+body{
+	background: white;
+	color: white;
+}
+
+/* SECTIONS ONLY */
+section{
+	min-height: 100vh;
+	max-height: 150vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* for section 3 */
+	background-image: url('assets/wkw.gif');
+	background-position: center;
+	background-size: 150%;
+	background-repeat: no-repeat;
+	transition: all ease-in;
+	
+}
+
+/* 1 */
+/* DALOY STUDIO */
+section #first{
+	display: flex;
+	height:fit-content;
+	letter-spacing: 3px;
+}
+div .studio h1{
+	font-size: 100px;
+}
+
+/* Main BG */
+#open{
+	color: #adadad;
+	background: rgb(255, 255, 255);
+}
