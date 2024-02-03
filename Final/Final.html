@@ -22,7 +22,7 @@
           let colors = ['#b6d7a8', '#3d85c6', '#f6b26b', '#fca1cc'];
           // declared array of fonts to be used
           // soba: indecisive lng tlga ak...
-          let fonts = ['DOS', 'Fake Receipt', 'Mario', 'Callheart', 'Poppins', 'Sprayers', 'Swiss'];
+          let fonts = ['DOS', 'Fake Receipt', 'Mario', 'Poppins', 'Sprayers', 'Swiss'];
     
             // initializes typed.js lib for typing effect
             let typed = new Typed('.typing', {
@@ -71,6 +71,7 @@
     <!-- menu -->
     <div class="nav-container"> 
 
+        <img src="images/logo.png" class="logo-img">
         <div class="menu-close">CLOSE</div>  
             <div class="socials">
                 <span><a href="#">instagram</a></span>
@@ -163,51 +164,58 @@
         });
     </script>
 
-    <!-- daloy randomizer -->
-    <!-- soba: WAGAGSGAGASHSHDSHDFGDF YESSS!!!! WOOOPIEEE -->
+    <!-- text randomizer -->
+    <!-- soba: WAGhHAF YESSS!!!! WOOOPIEEE -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-        const logo = document.querySelector(".site-logo");
-        logo.addEventListener("mouseenter", shuffleAnimation);
+            const logo = document.querySelector(".site-logo");
+            const about = document.querySelector(".item-1 .menu-item-link");
+            const artists = document.querySelector(".item-2 .menu-item-link");
+            const artFairs = document.querySelector(".item-3 .menu-item-link");
+            const shop = document.querySelector(".item-4 .menu-item-link");
+
+            logo.addEventListener("mouseenter", shuffleAnimation);
+            about.addEventListener("mouseenter", shuffleAnimation);
+            artists.addEventListener("mouseenter", shuffleAnimation);
+            artFairs.addEventListener("mouseenter", shuffleAnimation);
+            shop.addEventListener("mouseenter", shuffleAnimation);
         });
 
         function getRandomCharacter() {
-        const chars = "01X";
+        const chars = "01";
         return chars[Math.floor(Math.random() * chars.length)];
         }
 
-        function shuffleAnimation(event) 
-        {
+        function shuffleAnimation(event) {
         const target = event.currentTarget;
-            if (target.dataset.animating) 
-            {
-                return;
-            }
-            target.dataset.animating = true;
+        if (target.dataset.animating) {
+        return;
+        }
+        target.dataset.animating = true;
 
         const originalText = target.textContent;
-            let shuffles = 0;
-            const maxShuffles = 10;
-            const intervalDuration = 500 / maxShuffles;
+        let shuffles = 0;
+        const maxShuffles = 10;
+        const intervalDuration = 500 / maxShuffles;
 
-            let animationInterval = setInterval(() => 
-            {
-                if (shuffles >= maxShuffles) {
+        let animationInterval = setInterval(() => {
+            if (shuffles >= maxShuffles) {
                 clearInterval(animationInterval);
                 target.textContent = originalText;
                 delete target.dataset.animating;
-                } else {
+            } else {
                 const length = originalText.length;
                 let shuffledText = "";
                 for (let i = 0; i < length; i++) {
-                    shuffledText += getRandomCharacter();
+                shuffledText += getRandomCharacter();
                 }
                 target.textContent = shuffledText;
                 shuffles++;
-                }
+            }
             }, intervalDuration);
         }
     </script>
+
     
   </body>
 </html>
