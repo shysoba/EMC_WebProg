@@ -1,55 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" type="text/css" href="final.css">
+  <link rel="icon" href="images/favicon.png">
 
-  <link rel="stylesheet" type="text/css" href="Final.css">
-  <link rel="icon" href="images/favicon.png">    
+    <title>DALOY</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  </head>
 
-  // script links
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <body>
 
-    <title>Daloy Studio</title>
+    <script>
+        $(document).ready(function(){
+          // declared array of studio's main colors
+          let colors = ['#b6d7a8', '#3d85c6', '#f6b26b', '#fca1cc'];
+          // declared array of fonts to be used
+          // soba: indecisive lng tlga ak...
+          let fonts = ['DOS', 'Fake Receipt', 'Mario', 'Callheart', 'Poppins', 'Sprayers', 'Swiss'];
     
-</head>
-<body>
-
-  <script>
-    $(document).ready(function(){
-      // declared array of studio's main colors
-      let colors = ['#b6d7a8', '#3d85c6', '#f6b26b', '#fca1cc'];
-      // declared array of fonts to be used
-      // soba: indecisive lng tlga ak...
-      let fonts = ['DOS', 'Fake Receipt', 'Mario', 'Callheart', 'Poppins', 'Sprayers', 'Swiss'];
-
-        // initializes typed.js lib for typing effect
-        let typed = new Typed('.typing', {
-          strings: ['daloy', 'Daloy Studio', 'daloy studio', 'DALOY', 'daloydaloydaloy'],
-          typeSpeed: 90,
-          backSpeed: 30,
-          loop: true,
-
-            // changes color and font of the string randomly from color and font arrays
-            preStringTyped: function(arrayPos) {
-              let color = colors[Math.floor(Math.random() * colors.length)];
-              let font = fonts[Math.floor(Math.random() * fonts.length)];
-
-              $('.typing').css({
-                  'color': color,
-                  'font-family': font
-                });
-            }
+            // initializes typed.js lib for typing effect
+            let typed = new Typed('.typing', {
+              strings: ['daloy', 'Daloy Studio', 'daloy studio', 'DALOY', 'daloydaloydaloy'],
+              typeSpeed: 100,
+              backSpeed: 30,
+              loop: true,
+    
+                // changes color and font of the string randomly from color and font arrays
+                preStringTyped: function(arrayPos) {
+                  let color = colors[Math.floor(Math.random() * colors.length)];
+                  let font = fonts[Math.floor(Math.random() * fonts.length)];
+    
+                  $('.typing').css({
+                      'color': color,
+                      'font-family': font
+                    });
+                }
+            });
         });
-    });
-</script>    
+    </script>
 
-<section id="open">
-	<div id="first">
-    <div class="studio"><h1><span class="typing"></span></h1></div>
-	</div>
-	</section>
+    <div class="container">
 
-</body>
+        <!-- header -->
+        <div class="navbar">
+            <div class="site-logo">DALOY</div>
+            <div class="menu-open">MENU</div>
+        </div>
+
+        <!-- typing -->
+        <div class="header">
+            <h1><span class="typing"></span></h1>
+        </div>
+
+        <!-- footer -->
+        <div class="nav-footer">
+            <div class="links">
+              <a href="#">© MADE BY SOBA</a>
+            </div>
+            <div class="contact">
+              <a href="#">DALOYSTUDIO@GMAIL.COM</a>
+            </div>
+          </div>  
+
+    <!-- menu -->
+    <div class="nav-container"> 
+
+        <div class="menu-close">CLOSE</div>  
+            <div class="socials">
+                <span><a href="#">instagram</a></span>
+                <span><a href="#">facebook</a></span>
+                <span><a href="#">tiktok</a></span>
+                <span><a href="#">twitter</a></span>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item item-1">
+                    <a href="#" class="menu-item-link">About</a>
+                </div>
+                <div class="menu-item item-2">
+                    <a href="#" class="menu-item-link">Artists</a>
+                </div>
+                <div class="menu-item item-3">
+                    <a href="#" class="menu-item-link">Art Fairs</a>
+                </div>
+                <div class="menu-item item-4">
+                    <a href="#" class="menu-item-link">Shop</a>
+                </div>  
+            </nav>
+        </div>
+    </div>
+    
+
+    <!-- menu color change -->
+    <script>
+        var tl = new TimelineMax({ paused: true });
+        
+        tl.to(
+        ".nav-container", 
+        1, 
+        { left: 0, ease: 
+        Expo.easeInOut, 
+        });
+
+        tl.staggerFrom(
+        ".menu > div",
+        0.8,
+        { y: 100, opacity: 0, ease: 
+        Expo.easeOut },
+        "0.1", "-=0.4"
+        );
+
+        tl.reverse();
+            $(document).on("click", ".menu-open", function () {
+            tl.reversed(!tl.reversed());
+        });
+            $(document).on("click", ".menu-close", function () {
+            tl.reversed(!tl.reversed());
+        });
+
+        $(document).ready(function () {
+            $(".item-1").hover(
+            function () {
+                $(".nav-container").css("background-color", "#b6d7a8");
+            },
+            function () {
+                $(".nav-container").css("background", "#f6b26b");
+            }
+            );
+
+            $(".item-2").hover(
+            function () {
+                $(".nav-container").css("background-color", "#3d85c6");
+            },
+            function () {
+                $(".nav-container").css("background", "#b6d7a8");
+            }
+            );
+
+            $(".item-3").hover(
+            function () {
+                $(".nav-container").css("background-color", "#fca1cc");
+            },
+            function () {
+                $(".nav-container").css("background", "#3d85c6");
+            }
+            );
+
+            $(".item-4").hover(
+            function () {
+                $(".nav-container").css("background-color", "#f6b26b");
+            },
+            function () {
+                $(".nav-container").css("background", "#fca1cc");
+            }
+            );
+        });
+    </script>
+
+    <!-- daloy randomizer -->
+    <!-- soba: WAGAGSGAGASHSHDSHDFGDF YESSS!!!! WOOOPIEEE -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const logo = document.querySelector(".site-logo");
+        logo.addEventListener("mouseenter", shuffleAnimation);
+        });
+
+        function getRandomCharacter() {
+        const chars = "01X";
+        return chars[Math.floor(Math.random() * chars.length)];
+        }
+
+        function shuffleAnimation(event) 
+        {
+        const target = event.currentTarget;
+            if (target.dataset.animating) 
+            {
+                return;
+            }
+            target.dataset.animating = true;
+
+        const originalText = target.textContent;
+            let shuffles = 0;
+            const maxShuffles = 10;
+            const intervalDuration = 500 / maxShuffles;
+
+            let animationInterval = setInterval(() => 
+            {
+                if (shuffles >= maxShuffles) {
+                clearInterval(animationInterval);
+                target.textContent = originalText;
+                delete target.dataset.animating;
+                } else {
+                const length = originalText.length;
+                let shuffledText = "";
+                for (let i = 0; i < length; i++) {
+                    shuffledText += getRandomCharacter();
+                }
+                target.textContent = shuffledText;
+                shuffles++;
+                }
+            }, intervalDuration);
+        }
+    </script>
+    
+  </body>
 </html>
