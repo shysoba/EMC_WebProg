@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images\snoopy.png">    
+    <script src="Activity4.js"></script>  
+    <title>Activity #4</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+            color: #49ff35;
+        }
+
+        .container {
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        label {            
+            font-size: 21px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #reqs {
+            color: red;
+            margin-top: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            height: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            background-color: #49ff35;
+            color: black;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Input Validation</h2><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" oninput="checksUser()">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" oninput="checksPass()">
+
+        <br>
+        <button onclick="submit()">Submit</button>
+
+        <div id="result"></div>
+        <div id="reqs"></div>
+
+    </div>
+</body>
+</html>

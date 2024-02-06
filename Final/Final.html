@@ -26,19 +26,19 @@
     
             // initializes typed.js lib for typing effect
             let typed = new Typed('.typing', {
-              strings: ['daloy', 'Daloy Studio', 'daloy studio', 'DALOY', 'daloydaloydaloy'],
-              typeSpeed: 100,
-              backSpeed: 30,
-              loop: true,
+                strings: ['daloy', 'Daloy Studio', 'daloy studio', 'DALOY'],
+                typeSpeed: 100,
+                backSpeed: 30,
+                loop: true,
     
                 // changes color and font of the string randomly from color and font arrays
                 preStringTyped: function(arrayPos) {
-                  let color = colors[Math.floor(Math.random() * colors.length)];
-                  let font = fonts[Math.floor(Math.random() * fonts.length)];
+                    let color = colors[Math.floor(Math.random() * colors.length)];
+                    let font = fonts[Math.floor(Math.random() * fonts.length)];
     
                   $('.typing').css({
-                      'color': color,
-                      'font-family': font
+                        'color': color,
+                        'font-family': font
                     });
                 }
             });
@@ -48,7 +48,7 @@
     <div class="container">
 
         <!-- header -->
-        <div class="navbar">
+        <div class="nav-bar">
             <img src="images/logo.png" class="logo-img">
             
             <div class="menu-open">MENU</div>
@@ -62,10 +62,11 @@
         <!-- footer -->
         <div class="nav-footer">
             <div class="links">
-              <a href="#">© MADE BY SOBA</a>
+                <!-- cute netu -->
+                <a href="https://instagram.com/shysoba">© MADE FROM SOBA</a>
             </div>
             <div class="contact">
-              <a href="#">DALOYSTUDIO@GMAIL.COM</a>
+                <a href="mailto:daloystudio@gmail.com">DALOYSTUDIO@GMAIL.COM</a>
             </div>
           </div>  
 
@@ -75,10 +76,10 @@
         <div class="site-logo">DALOY</div>
         <div class="menu-close">CLOSE</div>  
             <div class="socials">
-                <span><a href="#">instagram</a></span>
-                <span><a href="#">facebook</a></span>
-                <span><a href="#">tiktok</a></span>
-                <span><a href="#">twitter</a></span>
+                <span><a href="www.instagram.com/daloystudio">instagram</a></span>
+                <span><a href="www.facebook.com/daloystudio">facebook</a></span>
+                <span><a href="www.tiktok.com/daloystudio">tiktok</a></span>
+                <span><a href="www.twitter.com/daloystudio">twitter</a></span>
             </div>
 
             <nav class="menu">
@@ -109,13 +110,14 @@
         { left: 0, ease: 
         Expo.easeInOut, 
         });
-
+        
+        // menu animation timing
         tl.staggerFrom(
         ".menu > div",
-        0.8,
+        0.5,
         { y: 100, opacity: 0, ease: 
         Expo.easeOut },
-        "0.1", "-=0.4"
+        "0.1", "-=0.3"
         );
 
         tl.reverse();
@@ -166,7 +168,7 @@
     </script>
 
     <!-- text randomizer -->
-    <!-- soba: WAGhHAF YESSS!!!! WOOOPIEEE -->
+    <!-- soba: WAGhHAF YESSS!!!! NKKSTRESS SHA -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const logo = document.querySelector(".site-logo");
@@ -183,21 +185,21 @@
         });
 
         function getRandomCharacter() {
-        const chars = "01";
-        return chars[Math.floor(Math.random() * chars.length)];
+        const chars = "DALOY";
+            return chars[Math.floor(Math.random() * chars.length)];
         }
 
         function shuffleAnimation(event) {
         const target = event.currentTarget;
-        if (target.dataset.animating) {
-        return;
-        }
-        target.dataset.animating = true;
+            if (target.dataset.animating) {
+            return;
+            }
+            target.dataset.animating = true;
 
         const originalText = target.textContent;
         let shuffles = 0;
         const maxShuffles = 10;
-        const intervalDuration = 500 / maxShuffles;
+        const intervalDuration = 300 / maxShuffles;
 
         let animationInterval = setInterval(() => {
             if (shuffles >= maxShuffles) {
