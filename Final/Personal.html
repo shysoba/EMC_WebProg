@@ -1,0 +1,365 @@
+<html>
+ <head>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style> 
+
+@font-face {
+   font-family: Atari;
+   src: url(AtariST8x16SystemFont.ttf);
+}
+
+div {
+   font-family: Atari;
+}
+</style>
+</head> 
+<body >
+<div id="header"><br><br></div>
+<div id="crt2"></div>
+<div id="crt1"></div>
+<div id="crt59"></div>
+<div id="monitor">
+<div id="output">
+<div id="introarea">
+<bgcolor=black>
+<div id="msg1"><br></div>
+<div id="msg2"><br></div>
+<div id="msg3"><br></div>
+<div id="msg4"><br></div>
+</div>
+<br><br>
+<div id="msgarea">
+<div id="msg5"></div>
+<br>
+<div id="msg6"></div>
+<br>
+<div id="msg7"></div>
+
+</div>
+</div>
+<div id="input">
+ <table style="width:100%"; cellspacing="10">
+  <tr>
+    <td><div id="t1"></div></td>
+    <td><div id="t2"></div></td>
+    <td><div id="t3"></div></td>
+  </tr>
+  <tr>
+    <td><div id="t4"></div></td>
+    <td><div id="t5"></div></td>
+    <td><div id="t6"></div></td>
+  </tr>
+  <tr>
+    <td><div id="t7"></div></td>
+    <td><div id="t8"></div></td>
+    <td><div id="t9"></div></td>
+  </tr>
+</table>
+<div id="msg8"></div>
+</div>
+<br>
+<br>
+<div id="msg9"></div>
+</div>
+</div>
+</body>
+
+<script>
+
+
+var feedEnabled = false;
+var textDelay = 5;   
+var LDindex;
+var showText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { showText(target, message, index, interval); }, interval); 
+  } 
+}
+
+var appendText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { appendText(target, message, index, interval); }, interval); 
+    
+  } 
+  if (index == message.length) {$(target).append('<br />');DisableFeed();}
+}
+
+var Message1 = function(){showText("#msg1", "****    WELCOME   ****", 0, 6);}
+
+var Message2 = function(){showText("#msg2", "This is Soba...if you're reading this HAJIMAYO, di ko pa sure kung ano pwede pa ilagay dito pero I've been in a WebDes rabbit hole recently soo, lets begin...", 0, textDelay);}
+
+var Message3 = function(){showText("#msg3", "Please click a topic in the upper menu on the right,", 0, textDelay);}
+
+var Message4 = function(){showText("#msg4", "", 0, textDelay);}
+
+var Message5 = function(){document.getElementById("msg5").style.color = "lightskyblue" ;}
+
+var Message6 = function(){document.getElementById("msg5").innerHTML = "";document.getElementById("msg5").style.color = "orange";appendText("#msg5", "No data found", 0, textDelay);}
+
+
+var FillT1 = function(){$(t1).append("<a onclick='ButtonPress(1)' href='#'>About")}
+var FillT2 = function(){$(t2).append("<a onclick='ButtonPress(2)' href='#'>Ewan q pa")}
+var FillT3 = function(){$(t3).append("<a onclick='ButtonPress(3)' href='#'>Games")}
+var FillT4 = function(){$(t4).append("<a onclick='ButtonPress(4)' href='#'>Portfolio")}
+var FillT5 = function(){$(t5).append("<a onclick='ButtonPress(5)' href='#'>Currents")}
+var FillT6 = function(){$(t6).append("<a onclick='ButtonPress(6)' href='#'>Archive")}
+var FillT7 = function(){$(t7).append("<a onclick='ButtonPress(7)' href='#'>Github")}
+var FillT8 = function(){$(t8).append("<a onclick='ButtonPress(8)' href='#'>Art")}
+var FillT9 = function(){$(t9).append("<a onclick='ButtonPress(9)' href='#'>Books")}
+
+function DisableFeed(){
+  feedEnabled = false;
+ // document.getElementById("crt1").style.display = "none";
+//  document.getElementById("crt59").style.display = "none";
+}
+
+function EnableFeed(){
+ // document.getElementById("crt1").style.display = "block";
+ document.getElementById("crt59").style.display = "block";
+  feedEnabled = true;
+    
+
+}
+
+function ButtonPress(btnIndex)
+{
+ if (feedEnabled == false)
+ {
+    EnableFeed();
+    document.getElementById("msg5").innerHTML = "";
+    document.getElementById("msg6").innerHTML = "";
+    document.getElementById("msg7").innerHTML = "";
+    document.getElementById("msg8").innerHTML = "";
+    document.getElementById("msg9").innerHTML = "";
+    switch (btnIndex)
+    {
+     case 1:
+       MessageOutOfSpace();
+       break;
+      case 2:
+        MessageMoonTrackRacing();
+        break;
+      case 3:
+        MessageProjectR();
+        break;
+      case 4:
+        Message10Atari400();
+        break;
+      case 5:
+        Message6();
+        break;
+      case 6:
+        Message6();
+        break;
+      case 7:
+        Message6();
+        break;
+      case 8:
+      Message3Dstuff();
+        break;
+      case 9:
+        MessageLD();
+        MessageLD1();
+        LDindex = 0;
+        break;
+        
+    }
+ }
+}
+
+function NextButtonLD(){
+  if (feedEnabled == false)
+ {
+    feedEnabled = true;
+    LDindex++;
+    if (LDindex > 2) LDindex = 0;
+    switch (LDindex)
+      {
+      case 0:
+      MessageLD1();
+      break;
+      case 1: 
+      MessageLD2();
+      break;
+      case 2:
+      MessageLD3();
+      break;
+      }
+    }
+}
+
+function PrevButtonLD(){
+  if (feedEnabled == false)
+ {
+    feedEnabled = true;
+    LDindex--;
+    if (LDindex < 0) LDindex = 2;
+    switch (LDindex)
+      {
+      case 0:
+      MessageLD1();
+      break;
+      case 1: 
+      MessageLD2();
+      break;
+      case 2:
+      MessageLD3();
+      break;
+      }
+    }
+}
+
+ function getTextFromFile(fileName,callBack)
+    {
+        var file = new XMLHttpRequest();
+        file.open("GET", fileName, false);
+        file.onreadystatechange = function ()
+        {
+            if(file.readyState === 4)
+            {
+                if(file.status === 200 || file.status == 0)
+                {
+                    var text = file.responseText;
+                    callBack(text);
+                }
+            }
+        }
+        file.send(null);
+    }
+    
+    
+
+var Intro = function()
+{
+  setTimeout(Message1, 500);
+  setTimeout(Message2, 1625);
+  setTimeout(Message3, 4000);
+  setTimeout(Message4, 5100);
+  setTimeout(Message5, 5150);
+  setTimeout(FillT3, 1050);
+  setTimeout(FillT6, 1100);
+  setTimeout(FillT9, 1150);
+  setTimeout(FillT2, 1175);
+  setTimeout(FillT5, 1200);
+  setTimeout(FillT8, 1250);
+  setTimeout(FillT1, 1325);
+  setTimeout(FillT4, 1375);
+  setTimeout(FillT7, 1425);
+}
+
+function ModalStuff(pic,picmodal){
+
+
+// get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById(pic);
+// get the modal
+var modal = document.getElementById(img.getAttribute("imgModal"));
+
+var modalImg = document.getElementById(picmodal);
+var captionText = document.getElementById("caption");
+img.ondblclick = function(){
+
+  var image = this;
+  var thisModal = document.getElementById(this.getAttribute("imgModal"));
+  thisModal.style.display = "block";
+  modalImg.src = this.src
+  captionText.innerHTML = this.alt;
+}
+
+// get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+var i;
+for (i=0;i<spans.length;i++){
+    spans[i].onclick = function()
+    { 
+        //modal.style.display = "none";
+        var closedModal = document.getElementById(this.getAttribute("spanModal"));
+        closedModal.style.display = "none";
+        console.log(closedModal);
+    }
+}
+}
+
+
+window.onload = Intro();
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id)) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+function OffsetImg(elmnt, offsetX, offsetY) {
+
+//    elmnt.style.top = (top + offsetY) + 'px';
+ //   elmnt.style.left = (left + offsetX) + 'px';
+  console.log(elmnt.getBoundingClientRect());
+ var rect = elmnt.getBoundingClientRect();
+  elmnt.style.left =rect.x + offsetX;
+  elmnt.style.top =rect.y + offsetY;
+ console.log(elmnt.getBoundingClientRect());
+        
+} 
+
+function GetArticle(fileName){
+      var text;
+      var file = new XMLHttpRequest();
+        file.open("GET", fileName, false);
+        file.onreadystatechange = function ()
+        {
+          if(file.readyState === 4)
+          {
+              if(file.status === 200 || file.status == 0)
+              {
+                  text = file.responseText.toString();
+              }
+          }
+      }
+      file.send(null);
+      if (text == null) text = "No data found";
+      return text;
+}
+
+
+</script>
+</html>
