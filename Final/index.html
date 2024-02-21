@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="icon" href="images/favicon.png">
+
+  <title>DALOY</title>
+
+    <!-- LIBRARIES -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>new WOW().init();</script>
+
+</head>
+
+<body>
+
+  <!-- typing script -->
+  <script>
+    $(document).ready(function () {
+      // declared array of studio's main colors
+      let colors = ['#b6d7a8', '#3d85c6', '#f6b26b', '#fca1cc'];
+      // declared array of fonts to be used
+      // soba: indecisive lng tlga ak...
+      let fonts = ['DOS', 'Fake Receipt', 'Mario', 'Poppins', 'Sprayers', 'Swiss'];
+
+      // initializes typed.js lib for typing effect
+      let typed = new Typed('.typing', {
+        strings: ['daloy', 'Daloy Studio', 'daloy studio', 'DALOY'],
+        typeSpeed: 100,
+        backSpeed: 30,
+        loop: true,
+
+        // changes color and font of the string randomly from color and font arrays
+        preStringTyped: function (arrayPos) {
+          let color = colors[Math.floor(Math.random() * colors.length)];
+          let font = fonts[Math.floor(Math.random() * fonts.length)];
+
+          $('.typing').css({
+            'color': color,
+            'font-family': font
+          });
+        }
+      });
+    });
+  </script>
+
+<!-- NAVIGATION -->
+  <section class="home-page">
+    <div class="container">
+
+      <!-- header -->
+      <div class="nav-bar">
+        <a href="index.html">
+          <img src="images/logo.png" class="logo-img" alt="logo">
+        </a>
+
+        <div class="about-us"><a href="#about" id="aboutus">ABOUT US</a></div>
+        <div class="menu-open">MENU</div>
+      </div>
+
+      <!-- typing -->
+      <div class="header">
+        <h1><span class="typing"></span></h1>
+      </div>
+
+      <!-- footer -->
+      <div class="nav-footer">
+        <div class="links">
+          <!-- cute netu -->
+          <a href="https://instagram.com/shysoba">© MADE FROM SOBA</a>
+        </div>
+        <div class="contact">
+          <a href="mailto:daloystudio@gmail.com">DALOYSTUDIO@GMAIL.COM</a>
+        </div>
+      </div>
+  </section>
+
+ 
+<!-- NAVIGATION -->
+  <!-- menu -->
+  <div class="nav-container">
+
+    <div class="daloy-text">DALOY</div>
+    <div class="menu-close">CLOSE</div>
+    <div class="socials">
+      <span><a href="www.instagram.com/daloystudio">instagram</a></span>
+      <span><a href="www.facebook.com/daloystudio">facebook</a></span>
+      <span><a href="www.tiktok.com/daloystudio">tiktok</a></span>
+      <span><a href="www.twitter.com/daloystudio">twitter</a></span>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-item item-1">
+        <a href="2_Artists.html" class="menu-item-link">Artists</a>
+      </div>
+      <div class="menu-item item-2">
+        <a href="3_Fairs.html" class="menu-item-link">Art Fairs</a>
+      </div>
+      <div class="menu-item item-3">
+        <a href="4_Products.html" class="menu-item-link">Shop</a>
+      </div>
+      <!---->
+      <div class="menu-item item-4">
+        <a href="5_Customer.html" class="menu-item-link">Contact</a>
+      </div>
+      
+    </nav>
+  </div>
+
+  
+<!-- End Menu -->
+  <div class="content">
+
+    <!-- About Page -->        
+    <a name="about"></a>
+        <section class="story">
+            <div class="about-container">
+                <div class="section-data">
+                <div class="row">
+                    <div class="left-column">
+                    <div class="about-number wow fadeInUp" data-wow-delay="0.5s">01</div>
+                    <div class="about-subheading wow fadeInUp" data-wow-delay="0.6s">Welcome to Daloy Studio</div>
+                    </div>
+                    <div class="right-column">
+                    <div class="about-heading wow fadeInUp" data-wow-delay="0.7s">
+                        <h2>Our Story</h2>
+                    </div>
+                    <div class="about-info wow fadeInUp" data-wow-delay="0.8s">
+                        Daloy Studio is more than just a space; it's a dynamic collective of passionate artists united by a shared love for creativity and expression. Founded with a vision to foster collaboration and artistic growth, Daloy Studio serves as a vibrant hub where artists come together to explore, create, and inspire.
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="more wow fadeInUp" data-wow-delay="0.9s"></div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+     <!--  Customer Care --> 
+    <a name="customer"></a>
+        <section class="customer">
+                <div class="customer-container">
+                    <div class="row">
+                          <div class="section-index wow fadeInUp" data-wow-delay="0.3s">02</div>
+                          <div class="section-heading wow fadeInUp" data-wow-delay="0.4s">CUSTOMER CARE</div>
+                    </div>
+                    <div class="row">
+                          <div class=" icon-title wow fadeInUp" data-wow-delay="0.5s">
+                            We're dedicated to ensuring your satisfaction every step of the way.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                                <form action="" name="customer-form" id="customer-form" method="POST">
+
+                                      <ul>
+
+                                            <li class="wow fadeInUp" data-wow-delay="0.6s">
+                                                  <label for="customer-name">Name :</label>
+                                                  <div class="textarea">
+                                                        <input type="text" name="customer-name" id="customer-name" value="" required>
+                                                  </div>
+                                            </li>
+
+                                            <br>
+
+                                            <li class="wow fadeInUp" data-wow-delay="0.7s">
+                                                  <label for="customer-email">E-mail :</label>
+                                                  <div class="textarea">
+                                                        <input type="email" name="customer-email" id="customer-email" value="" required>
+                                                  </div>
+                                            </li>
+
+                                            <br>
+
+                                            <li class="wow fadeInUp" data-wow-delay="0.8s">
+                                                 <label for="customer-project">Message :</label> 
+                                                 <div class="textarea">
+                                                 <textarea name="customer-project" id="customer-project" rows="6" required></textarea>
+                                                 </div>
+                                            </li>
+
+                                      </ul>
+
+                                      <button type="submit" name="customer-submit" id="customer-submit" class="send wow fadeInUp" data-wow-delay="0.9s">Send Message</button>
+                                </form>
+                          </div>
+                    </div>
+              </div>
+        </section>
+
+<!-- NAVIGATION -->
+    <!-- #region -->
+    <!-- menu: color change -->
+        <script>
+            var tl = new TimelineMax({
+            paused: true
+            });
+
+            tl.to(
+            ".nav-container",
+            1, {
+                left: 0,
+                ease: Expo.easeInOut
+            },
+            );
+
+            // menu animation timing
+            tl.staggerFrom(
+            ".menu > div",
+            0.5, {
+                y: 100,
+                opacity: 0,
+                ease: Expo.easeOut
+            },
+            "0.1", "-=0.3"
+            );
+
+            tl.reverse();
+            $(document).on("click", ".menu-open", function () {
+            tl.reversed(!tl.reversed());
+            });
+            $(document).on("click", ".menu-close", function () {
+            tl.reversed(!tl.reversed());
+            });
+
+            $(document).ready(function () {
+            $(".item-1").hover(
+                function () {
+                $(".nav-container").css("background-color", "#b6d7a8");
+                },
+                function () {
+                $(".nav-container").css("background", "#f6b26b");
+                }
+            );
+
+            $(".item-2").hover(
+                function () {
+                $(".nav-container").css("background-color", "#3d85c6");
+                },
+                function () {
+                $(".nav-container").css("background", "#b6d7a8");
+                }
+            );
+
+            $(".item-3").hover(
+                function () {
+                $(".nav-container").css("background-color", "#fca1cc");
+                },
+                function () {
+                $(".nav-container").css("background", "#3d85c6");
+                }
+            );
+
+            $(".item-4").hover(
+                function () {
+                $(".nav-container").css("background-color", "#f6b26b");
+                },
+                function () {
+                $(".nav-container").css("background", "#fca1cc");
+                }
+            );
+            });
+        </script>
+        
+
+    <!-- menu: text randomizer -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const logo = document.querySelector(".daloy-text");
+            const about = document.querySelector(".item-1 .menu-item-link");
+            const artists = document.querySelector(".item-2 .menu-item-link");
+            const artFairs = document.querySelector(".item-3 .menu-item-link");
+            const shop = document.querySelector(".item-4 .menu-item-link");
+
+            logo.addEventListener("mouseenter", shuffleAnimation);
+            about.addEventListener("mouseenter", shuffleAnimation);
+            artists.addEventListener("mouseenter", shuffleAnimation);
+            artFairs.addEventListener("mouseenter", shuffleAnimation);
+            shop.addEventListener("mouseenter", shuffleAnimation);
+            });
+
+            function getRandomCharacter() {
+            const chars = "DALOY";
+            return chars[Math.floor(Math.random() * chars.length)];
+            }
+
+            function shuffleAnimation(event) {
+            const target = event.currentTarget;
+            if (target.dataset.animating) {
+                return;
+            }
+            target.dataset.animating = true;
+
+            const originalText = target.textContent;
+            let shuffles = 0;
+            const maxShuffles = 10;
+            const intervalDuration = 300 / maxShuffles;
+
+            let animationInterval = setInterval(() => {
+                if (shuffles >= maxShuffles) {
+                clearInterval(animationInterval);
+                target.textContent = originalText;
+                delete target.dataset.animating;
+                } else {
+                const length = originalText.length;
+                let shuffledText = "";
+                for (let i = 0; i < length; i++) {
+                    shuffledText += getRandomCharacter();
+                }
+                target.textContent = shuffledText;
+                shuffles++;
+                }
+            }, intervalDuration);
+            }
+        </script>
+<!-- #endregion -->
+
+</body>
+
+</html>

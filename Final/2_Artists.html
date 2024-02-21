@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" href="images/favicon.png">
+        <title>Artist</title>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="2_Artists.css" />
+        
+    </head>
+    <body>
+
+    <!-- header -->
+    <div class="nav-bar">
+        <a href="index.html">
+          <img src="images/logo.png" class="logo-img" alt="logo">
+        </a>
+        
+        <div class="menu-open">MENU</div>
+      </div>
+
+        <!-- scroll -->
+        <div class="container">
+            <div class="block block-1">
+                <h1><a href="https://instagram.com/abowlofsoba" id="alink">A BOWL OF SOBA</a></h1>
+            </div>
+            <div class="block block-2">
+                <h1><a href="https://instagram.com/arabella.t." id="alink">ARABELLA T.</a></h1>
+            </div>
+            <div class="block block-3">
+                <h1><a href="https://instagram.com/demitlog" id="alink">DEMITLOG</a></h1>
+            </div>
+            <div class="block block-4">
+                <h1><a href="https://instagram.com/doman_ponpon" id="alink">DOMAN</a></h1>
+            </div>
+            <div class="block block-5">
+                <h1><a href="https://instagram.com/kimkimmagno" id="alink">KIMKIM</a></h1>
+            </div>
+            <div class="block block-6">
+                <h1><a href="https://instagram.com/likhaniyya" id="alink">LIKHA NI YYA</a></h1>
+            </div>
+            <div class="block block-7">
+                <h1><a href="https://instagram.com/lovurhi" id="alink">LOVE, RHI</a></h1>
+            </div>
+        </div>
+
+
+    <!-- menu -->
+    <div class="nav-container"> 
+
+        <div class="daloy-logo">DALOY</div>
+        <div class="menu-close">CLOSE</div>  
+            <div class="socials">
+                <span><a href="www.instagram.com/daloystudio">instagram</a></span>
+                <span><a href="www.facebook.com/daloystudio">facebook</a></span>
+                <span><a href="www.tiktok.com/daloystudio">tiktok</a></span>
+                <span><a href="www.twitter.com/daloystudio">twitter</a></span>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item item-1">
+                    <a href="1_About.html" class="menu-item-link">About</a>
+                </div>
+                <div class="menu-item item-2">
+                    <a href="2_Artists.html" class="menu-item-link">Artists</a>
+                </div>
+                <div class="menu-item item-3">
+                    <a href="3_Fairs.html" class="menu-item-link">Art Fairs</a>
+                </div>
+                <div class="menu-item item-4">
+                    <a href="4_Products.html" class="menu-item-link">Shop</a>
+                </div>                  
+            </nav>
+        </div>
+    </div>
+
+
+        <script src="2.js"></script>
+        <script>
+            var blocks = document.getElementsByClassName("block");
+            var container = document.getElementsByClassName("container");
+            var hs = new HorizontalScroll.default({
+                blocks: blocks,
+                container: container,
+                isAnimated: true,
+                springEffect: 0.8,
+            });
+        </script>
+        
+    
+
+    <!-- menu: color change -->
+    <script>
+        var tl = new TimelineMax({ paused: true });
+        
+        tl.to(
+        ".nav-container", 
+        1, 
+        { left: 0, ease: 
+        Expo.easeInOut, 
+        });
+        
+        // menu animation timing
+        tl.staggerFrom(
+        ".menu > div",
+        0.5,
+        { y: 100, opacity: 0, ease: 
+        Expo.easeOut },
+        "0.1", "-=0.3"
+        );
+
+        tl.reverse();
+            $(document).on("click", ".menu-open", function () {
+            tl.reversed(!tl.reversed());
+        });
+            $(document).on("click", ".menu-close", function () {
+            tl.reversed(!tl.reversed());
+        });
+
+        $(document).ready(function () {
+            $(".item-1").hover(
+            function () {
+                $(".nav-container").css("background-color", "#b6d7a8");
+            },
+            function () {
+                $(".nav-container").css("background", "#f6b26b");
+            }
+            );
+
+            $(".item-2").hover(
+            function () {
+                $(".nav-container").css("background-color", "#3d85c6");
+            },
+            function () {
+                $(".nav-container").css("background", "#b6d7a8");
+            }
+            );
+
+            $(".item-3").hover(
+            function () {
+                $(".nav-container").css("background-color", "#fca1cc");
+            },
+            function () {
+                $(".nav-container").css("background", "#3d85c6");
+            }
+            );
+
+            $(".item-4").hover(
+            function () {
+                $(".nav-container").css("background-color", "#f6b26b");
+            },
+            function () {
+                $(".nav-container").css("background", "#fca1cc");
+            }
+            );
+        });
+    </script>
+
+    <!-- menu: text randomizer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const logo = document.querySelector(".daloy-logo");
+            const about = document.querySelector(".item-1 .menu-item-link");
+            const artists = document.querySelector(".item-2 .menu-item-link");
+            const artFairs = document.querySelector(".item-3 .menu-item-link");
+            const shop = document.querySelector(".item-4 .menu-item-link");
+
+            logo.addEventListener("mouseenter", shuffleAnimation);
+            about.addEventListener("mouseenter", shuffleAnimation);
+            artists.addEventListener("mouseenter", shuffleAnimation);
+            artFairs.addEventListener("mouseenter", shuffleAnimation);
+            shop.addEventListener("mouseenter", shuffleAnimation);
+        });
+
+        function getRandomCharacter() {
+        const chars = "DALOY";
+            return chars[Math.floor(Math.random() * chars.length)];
+        }
+
+        function shuffleAnimation(event) {
+        const target = event.currentTarget;
+            if (target.dataset.animating) {
+            return;
+            }
+            target.dataset.animating = true;
+
+        const originalText = target.textContent;
+        let shuffles = 0;
+        const maxShuffles = 10;
+        const intervalDuration = 300 / maxShuffles;
+
+        let animationInterval = setInterval(() => {
+            if (shuffles >= maxShuffles) {
+                clearInterval(animationInterval);
+                target.textContent = originalText;
+                delete target.dataset.animating;
+            } else {
+                const length = originalText.length;
+                let shuffledText = "";
+                for (let i = 0; i < length; i++) {
+                shuffledText += getRandomCharacter();
+                }
+                target.textContent = shuffledText;
+                shuffles++;
+            }
+            }, intervalDuration);
+        }
+    </script>
+    </body>
+</html>
